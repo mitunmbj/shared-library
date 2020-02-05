@@ -1,7 +1,17 @@
-node {
- 	stage('SCM checkout') {
-		git credentialsId: '', url: ''
- 		}
+@Library('jenkins-library@master') _
+ 
+pipeline {
+    agent any
+    stages {
+        stage('Git Checkout') {
+            steps {
+            gitCheckout(
+                branch: "master",
+                url: "https://github.com/mitunmbj/shared-library.git"
+                 )
+            }
+	}
+
  	stage('Docker build') {
   		sh "docker build --rm -f Dockerfile -t mitun.azurecr.io/ubuntu:latest ."
 		}
