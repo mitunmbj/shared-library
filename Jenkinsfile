@@ -1,6 +1,7 @@
 @Library('mitun-library@master') _
  
 pipeline {
+	stages {
            stage('Git Checkout') {
             steps {
             gitCheckout(
@@ -25,3 +26,4 @@ pipeline {
   		sh "ssh -t -t root@13.68.225.131 /home/mitunmbj/deploy.sh"
  		}
 	}
+}
