@@ -6,3 +6,5 @@ def call(Map stageParams) {
         userRemoteConfigs: [[ url: stageParams.url ]]
     ])
   }
+
+[docker build --rm -f Dockerfile -t mitun.azurecr.io/ubuntu:latest .].execute()
