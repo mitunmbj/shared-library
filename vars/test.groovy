@@ -7,4 +7,3 @@ def call(Map stageParams) {
     ])
   }
 
-[docker build --rm -f Dockerfile -t mitun.azurecr.io/ubuntu:latest .].execute()
