@@ -16,8 +16,8 @@ pipeline {
   		sh "docker build --rm -f Dockerfile -t mitun.azurecr.io/ubuntu:latest ."
 		}
     stage ('Push Docker Image'){
-    withCredentials([string(credentialsId: 'Docker_sr', variable: 'Docker_1')]) {
-        sh "docker login -u PlatformImage -p ${Docker_1} platformimage.azurecr.io"
+    withCredentials([usernameColonPassword(credentialsId: 'githucred', variable: 'mitunacr')]) {
+        sh "docker login -u mitun -p ${mitunacr} mitun.azurecr.io"
         }
         sh 'docker push mitun.azurecr.io/ubuntu:latest'
       	sh 'docker rmi mitun.azurecr.io/ubuntu:latest'
