@@ -1,4 +1,4 @@
-@Library('jenkins-library@master') _
+@Library('mitun-library@master') _
  
 pipeline {
     agent any
