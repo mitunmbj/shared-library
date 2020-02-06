@@ -1,11 +1,11 @@
 def call(String project, String hubUser) {
-    sh "docker image build -t ${hubUser}/${project}:beta-${env.BRANCH_NAME}-${env.BUILD_NUMBER} ."
+    sh "docker build -t mitun.azurecr.io/ubuntu:latestone ."
     withCredentials([usernamePassword(
-            credentialsId: "docker",
+            credentialsId: "docker-registery",
             usernameVariable: "USER",
             passwordVariable: "PASS"
     )]) {
-        sh "docker login -u '$USER' -p '$PASS'"
+        sh "docker login -u mitun -p 5opvsXZVvPk94tCoasrBbUy4M0dVFFL/ mitun.azurecr.io"
     }
-    sh "docker image push ${hubUser}/${project}:beta-${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
+    sh "docker push mitun.azurecr.io/ubuntu:latestone"
 }
