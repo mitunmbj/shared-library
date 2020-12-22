@@ -3,5 +3,5 @@
 stage('Git Checkout') {
     printBuildinfo {
         name = "master"
-        url= 
+        url = "https://github.com/mitunmbj/shared-library.git"
     }
