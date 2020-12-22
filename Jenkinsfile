@@ -1,4 +1,4 @@
-@Library('shared-library@master') _
+@Library('mitunmbj/shared-library@master') _
 
 stage('Git Checkout') {
     printBuildinfo {
