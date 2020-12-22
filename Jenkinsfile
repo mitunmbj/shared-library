@@ -1,1 +1,7 @@
-@Library('mitun-library@master') _
+@Library('shared-library@master') _
+
+stage('Git Checkout') {
+    printBuildinfo {
+        name = "master"
+        url= 
+    }
