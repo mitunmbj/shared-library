@@ -1,7 +1,8 @@
 @Library('mitunmbj/shared-library@master') _
 
 stage('Git Checkout') {
-    printBuildinfo {
+    test {
         name = "master"
         url = "https://github.com/mitunmbj/shared-library.git"
     }
+}
