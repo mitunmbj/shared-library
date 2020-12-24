@@ -1,4 +1,4 @@
-@Library('mitunmbj/shared-library@master') _
+@Library('mitun-shared-library@master') _
 
 stage('Git Checkout') {
     test {
