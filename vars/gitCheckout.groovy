@@ -3,7 +3,7 @@ pipeline {
     agent none
     stages {
         stage('Checkout') {
-            agent none
+            agent { label 'docker_linux' }
             steps {
               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: '$url']]]) 
   
