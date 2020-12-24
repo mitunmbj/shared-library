@@ -1,12 +1,14 @@
+def call(String url) {
 pipeline {
     agent none
     stages {
         stage('Checkout') {
-            agent { label 'docker_linux' }
+            agent none
             steps {
-              checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/mitunmbj/shared-library.git']]]) 
+              checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: '$url']]]) 
   
             }
            }
            }
+}
 }
