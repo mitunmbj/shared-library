@@ -1,4 +1,4 @@
-def call(String url branch) {
+def call(String url,branch) {
 pipeline {
     agent none
     stages {
