@@ -1,4 +1,4 @@
-def call(Git-Checkout) {
+def call(checkout) {
  
     checkout([
         $class: 'GitSCM',
